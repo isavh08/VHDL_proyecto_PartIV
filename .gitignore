@@ -1,0 +1,27 @@
+# Quartus
+quartus/db/
+quartus/incremental_db/
+quartus/output_files/
+quartus/simulation/
+quartus/greybox_tmp/
+quartus/*.qws
+quartus/*.qpf.bak
+quartus/*.qsf.bak
+quartus/PLLJ_PLLSPE_INFO.txt
+quartus/c5_pin_model_dump.txt
+*.rpt
+*.summary
+*.smsg
+*.done
+*.jdi
+*.pin
+*.sld
+*.sof
+*.pof
+
+# ModelSim
+sim/work/
+sim/transcript
+sim/*.wlf
+sim/modelsim.ini
+sim/vsim_stacktrace.vstf
