@@ -22,7 +22,14 @@ VHDL. Está armado para la **DE2-115** (Cyclone IV E, EP4CE115F29C7).
 * El punto prende el LED medio segundo, la raya 1.5 s, y entre símbolos se
   apaga medio segundo.
 
-## Carpetas
+## Qué hay en cada carpeta
+
+| Qué                     | Dónde                                                      |
+|-------------------------|------------------------------------------------------------|
+| Diagrama de la FSM      | [docs/fsm_diagrama.md](docs/fsm_diagrama.md)               |
+| Código de la FSM        | [src/morse_fsm.vhd](src/morse_fsm.vhd) (lo demás del circuito también está en `src/`) |
+| Testbenches             | [tb/tb_morse_fsm.vhd](tb/tb_morse_fsm.vhd) y [tb/tb_morse_encoder.vhd](tb/tb_morse_encoder.vhd) |
+| Implementación y prueba | [docs/implementacion_y_prueba.md](docs/implementacion_y_prueba.md) y la carpeta `quartus/` |
 
 ```
 docs/     diagrama de la FSM y notas de prueba
