@@ -1,0 +1,42 @@
+# Lab 7 parte IV - morse
+# DE2-115 (Cyclone IV E EP4CE115F29C7)
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY morse_encoder
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_1993
+
+set_global_assignment -name VHDL_FILE ../src/morse_rom.vhd
+set_global_assignment -name VHDL_FILE ../src/morse_shift_reg.vhd
+set_global_assignment -name VHDL_FILE ../src/morse_len_counter.vhd
+set_global_assignment -name VHDL_FILE ../src/half_sec_counter.vhd
+set_global_assignment -name VHDL_FILE ../src/morse_fsm.vhd
+set_global_assignment -name VHDL_FILE ../src/morse_encoder.vhd
+set_global_assignment -name SDC_FILE morse_encoder.sdc
+
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+
+# Reloj de 50 MHz
+set_location_assignment PIN_Y2   -to CLOCK_50
+
+# Interruptores SW2..0 (letra)
+set_location_assignment PIN_AB28 -to SW[0]
+set_location_assignment PIN_AC28 -to SW[1]
+set_location_assignment PIN_AC27 -to SW[2]
+
+# Pulsadores (activos en bajo): KEY0 reset, KEY1 inicio
+set_location_assignment PIN_M23  -to KEY[0]
+set_location_assignment PIN_M21  -to KEY[1]
+
+# Salida Morse
+set_location_assignment PIN_G19  -to LEDR[0]
+
+# Estado de la FSM (depuracion)
+set_location_assignment PIN_E21  -to LEDG[0]
+set_location_assignment PIN_E22  -to LEDG[1]
+set_location_assignment PIN_E25  -to LEDG[2]
+set_location_assignment PIN_E24  -to LEDG[3]
+
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
